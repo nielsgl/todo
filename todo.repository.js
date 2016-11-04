@@ -3,7 +3,7 @@ var config = require('./config');
 
 function TodoRepository() {
   var sequelize = new Sequelize('TodoDB', config.DB_USER, config.DB_PASSWORD, {
-    host: config.DB_HOST,
+    host: 'todo-db.coigj17hrrst.us-east-1.rds.amazonaws.com',
     dialect: 'mariadb',
 
     pool: {
