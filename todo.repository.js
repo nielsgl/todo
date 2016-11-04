@@ -1,8 +1,9 @@
 var Sequelize = require('sequelize');
+var config = require('./config');
 
 function TodoRepository() {
-  var sequelize = new Sequelize('TodoDB', 'root', 'ribame4', {
-    host: 'localhost',
+  var sequelize = new Sequelize('TodoDB', config.DB_USER, config.DB_PASSWORD, {
+    host: config.DB_HOST,
     dialect: 'mariadb',
 
     pool: {

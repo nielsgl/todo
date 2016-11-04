@@ -3,7 +3,7 @@ var todoRepository = require('./todo.repository');
 var app = express();
 
 
-const PORT = 3001;
+const PORT = 3000;
 
 app.get('/todos', function(req, res){
   todoRepository.list().then(function(todos){
