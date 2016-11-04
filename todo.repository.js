@@ -2,8 +2,8 @@ var Sequelize = require('sequelize');
 var config = require('./config');
 
 function TodoRepository() {
-  var sequelize = new Sequelize('TodoDB', config.DB_USER, config.DB_PASSWORD, {
-    host: 'todo-db.coigj17hrrst.us-east-1.rds.amazonaws.com',
+  var sequelize = new Sequelize(config.DB_NAME, config.DB_USER, config.DB_PASSWORD, {
+    host: config.DB_HOST,
     dialect: 'mariadb',
 
     pool: {
