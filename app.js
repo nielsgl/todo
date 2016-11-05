@@ -25,7 +25,7 @@ app.post('/todos', function(req, res){
     body = Buffer.concat(body).toString();
     todoRepository.create(JSON.parse(body)).then(function(todo){
       res.json(todo);
-    });   
+    });
   });
 });
 
@@ -38,7 +38,7 @@ app.put('/todos', function(req, res){
     var todo = JSON.parse(body);
     todoRepository.update(todo.id, todo).then(function(count){
       res.send('todos updated: ' + count);
-    });   
+    });
   });
 });
 
@@ -48,6 +48,6 @@ app.delete('/todos/:todoId', function(req, res){
   });
 });
 
-app.listen(PORT, 'localhost', function() {
+app.listen(PORT, '0.0.0.0', function() {
   console.log('server started at port ' + PORT);
 });
